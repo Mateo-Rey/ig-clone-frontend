@@ -1,13 +1,23 @@
-
-import { View, Text, TextInput } from "react-native";
+import { View, Text } from "react-native";
 import { loginStyles } from "./../assets/styles";
-
+import { Button, Input } from "react-native-elements";
 
 function Login() {
   return (
-    <View style={loginStyles.headerBar}>
-      <TextInput style={loginStyles.headerText} placeholder='please input your username'></TextInput>
-      <TextInput style={loginStyles.headerText} placeholder='please input your password' secureTextEntry={true}></TextInput>
+    <View style={loginStyles.container}>
+      <Input
+        placeholder="Email"
+        keyboardAppearance="dark"
+        keyboardType="email-address"
+        autoCapitalize={false}
+        autoCorrect={false}
+      ></Input>
+      <Input
+        placeholder="Password"
+        secureTextEntry={true}
+        keyboardAppearance="dark"
+      ></Input>
+      <Button title='Submit'/>
     </View>
   );
 }
