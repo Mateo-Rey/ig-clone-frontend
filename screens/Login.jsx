@@ -1,12 +1,13 @@
 
-import { View, Text } from "react-native";
+import { View, Text, TextInput } from "react-native";
 import { loginStyles } from "./../assets/styles";
 
 
 function Login() {
   return (
     <View style={loginStyles.headerBar}>
-      <Text style={loginStyles.headerText}> IG Clone</Text>
+      <TextInput style={loginStyles.headerText} placeholder='please input your username'></TextInput>
+      <TextInput style={loginStyles.headerText} placeholder='please input your password' secureTextEntry={true}></TextInput>
     </View>
   );
 }

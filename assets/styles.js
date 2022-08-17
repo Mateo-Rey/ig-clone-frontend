@@ -2,11 +2,11 @@ import { StyleSheet } from "react-native";
 
 export const loginStyles = StyleSheet.create({
   headerBar: {
-    height: 40,
+    height: 50,
     backgroundColor: "white",
   },
   headerText: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "900",
     textAlign: "center",
   },
