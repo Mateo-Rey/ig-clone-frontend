@@ -1,17 +1,18 @@
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, ActivityIndicator } from "react-native";
 import { photoCardStyles } from "../assets/styles";
 import { Avatar, Icon  } from 'react-native-elements'
+import { useState } from "react";
+import { LikeButton } from "./LikeButton";
 
 
 function PhotoCard({ photo }) {
-    
+    const [liked, setLiked] = useState()
     const BASE_URL = 'https://source.unsplash.com/random?miami='
 
   return (
     <>
       <View style={photoCardStyles.cardContainer}>
         <View style={photoCardStyles.cardHeader}>
-          {/* avatar */}
         <Avatar rounded source={{uri: `https://randomuser.me/api/portraits/men/${photo.id}.jpg`}}/>
         
 
@@ -21,11 +22,15 @@ function PhotoCard({ photo }) {
           </View>
 
         </View>
-        <Icon name='code' />
+        <Icon name='more-vert' />
       </View>
 
-      <Image source={{uri: BASE_URL + 1}} style={photoCardStyles.cardImage} />
+      <Image source={{uri: BASE_URL + 1}} style={photoCardStyles.cardImage} PlaceholderContent={<ActivityIndicator/>} />
+      <View>
       <Text style={photoCardStyles.cardText}> text here </Text>
+      <LikeButton liked={liked} setLiked={setLiked}/>
+      </View>
+      
     </>
   );
 }
