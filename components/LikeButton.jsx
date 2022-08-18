@@ -2,6 +2,7 @@ import React from "react";
 import { Pressable } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+
 export const LikeButton = ({liked, setLiked}) => {
 
   return (
